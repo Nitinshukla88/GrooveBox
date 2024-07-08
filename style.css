@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color:beige
+}
+
+ul{
+    display: flex;
+    height: 50px;
+    background-color: black;
+}
+
+img{
+    height: 65px;
+    width: 65px;
+    margin: 8px;
+    background-color: black;
+}
