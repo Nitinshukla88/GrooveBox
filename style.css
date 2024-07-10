@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
@@ -7,7 +9,7 @@
 html,body{
     height: 100%;
     width: 100%;
-    background-color:beige
+    background-color:beige;
 }
 
 ul{
@@ -25,4 +27,42 @@ li img{
 li{
     list-style-type: none;
     padding: 8px;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+#App-name{
+    font-size: 1.3rem;
+    text-decoration: none;
+    padding-left: 0px;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.chotu-container{
+    height: 70vh;
+    width: 150vh;
+    background: url(Background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    border-radius: 5px;
+}
+
+.main-container p{
+    font-family: "Varela Round", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3rem;
+    padding: 10px;
 }
