@@ -88,6 +88,7 @@ li:hover{
     align-items: center;
     justify-content: center;
     padding: 15px;
+    flex-direction: column;
 }
 
 input[type=range]{
@@ -118,4 +119,11 @@ input[type=range]{
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
     font-style: normal;
+}
+
+.current-song{
+    height: 30px;
+    width: 100px;
+    border: 1px solid black;
+    padding: 8px;
 }
