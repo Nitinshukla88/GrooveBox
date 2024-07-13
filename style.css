@@ -121,9 +121,9 @@ input[type=range]{
     font-style: normal;
 }
 
-.current-song{
+/* .current-song{
     height: 30px;
     width: 100px;
     border: 1px solid black;
     padding: 8px;
-}
+} */
