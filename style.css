@@ -31,9 +31,11 @@ li{
     font-weight: 600;
     font-style: normal;
 }
-li:hover{
-    text-decoration: underline;
+.nav-li:hover{
     cursor: pointer;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
 }
 #App-name{
     font-size: 1.3rem;
@@ -56,8 +58,7 @@ li:hover{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 5px;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .main-container p{
@@ -102,27 +103,46 @@ input[type=range]{
     height: 330px;
     width: 390px;
     margin: 25px;
-    border: 2px solid black;
+    /* border: 1px solid black; */
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 13px;
 }
 
 .songs{
-    height: 38px;
+    height: 45px;
     width: 300px;
     text-align: center;
     line-height: 34px;
-    border: 2px solid black;
+    border: 1.5px solid black;
     background-color: white;
     margin: 8px;
+    margin-left: 50px;
     border-radius: 15px;
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
     font-style: normal;
     cursor: pointer;
+}
+
+.songs:hover{
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+}
+
+span img{
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    line-height: 40px;
+}
+
+span{
+    width: 34px;
+    /* margin-left: 50px; */
+
 }
 
 /* .current-song{
