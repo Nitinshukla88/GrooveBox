@@ -14,7 +14,7 @@ html,body{
 
 ul{
     display: flex;
-    height: 60px;
+    height: 65px;
     background-color: rgb(219, 185, 185);
     align-items: center;
 }
@@ -52,7 +52,7 @@ li{
 }
 
 .chotu-container{
-    height: 60vh;
+    height: 62vh;
     width: 150vh;
     background: url(Background.jpg);
     background-position: center;
@@ -84,21 +84,6 @@ li{
     }
 }
 
-.footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    flex-direction: column;
-    background-color: rgb(219, 185, 185);
-    margin-top: 10px;
-}
-
-input[type=range]{
-    width: 67%;
-    height: 3px;
-}
-
 .song-list{
     height: 330px;
     width: 390px;
@@ -114,37 +99,70 @@ input[type=range]{
     height: 45px;
     width: 300px;
     text-align: center;
-    line-height: 34px;
-    border: 1.5px solid black;
-    background-color: white;
+    line-height: 43px;
+    margin-left: 22px;
+    color: white;
+    border: 1.5px solid white;
+    background-color: black;
     margin: 8px;
-    margin-left: 50px;
     border-radius: 15px;
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
     font-style: normal;
-    cursor: pointer;
-}
-
-.songs:hover{
-    background-color: black;
-    border: 1px solid white;
-    color: white;
+    cursor: pointer;;
 }
 
 span img{
-    height: 34px;
-    width: 34px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
-    line-height: 40px;
+    border: 1.5px solid black;
 }
 
 span{
     width: 34px;
-    /* margin-left: 50px; */
-
+    height: 34px;
+    margin-top: 10px;
+    margin-right: 3px;
 }
 
+.temp{
+    display: flex;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    flex-direction: column;
+    background-color: rgb(219, 185, 185);
+    margin-top: 13px;
+}
+
+input[type=range]{
+    width: 67%;
+    height: 5px;
+}
+
+.footer-main{
+    display: flex;
+    width: 575px;
+    margin-top: 20px;
+}
+
+i{
+    height: 25px;
+    width: 24px;
+}
+
+.current-song{
+    width: 200px;
+}
+
+.icons{
+    margin-left: 65px;
+}
 /* .current-song{
     height: 30px;
     width: 100px;
