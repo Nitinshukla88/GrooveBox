@@ -1,12 +1,15 @@
 document.addEventListener("click", function (event) {
-  // let audio = new Audio("/songs/malhari.mp3");
-  // if (data.target.textContent == "Sorry - By Justin Bieber") {
-  //   audio.play();
-  // }
-
+  let newdiv = document.createElement('div');
   let current_playing_song = "";
 
   let data_recevied = event.target.textContent;
+  
+  newdiv.classList.add("current-song");
+  newdiv.style.textContent = data_recevied;
+  
+  const parentdiv = document.querySelector('.footer-main');
+  parentdiv.appendChild(newdiv);
+
   if(data_recevied == "One call away - By charlie puth"){
     if(current_playing_song==""){
       new Audio("/songs/one call away.mp3").play();

@@ -109,7 +109,7 @@ li{
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
     font-style: normal;
-    cursor: pointer;;
+    cursor: pointer;
 }
 
 span img{
@@ -148,7 +148,7 @@ input[type=range]{
 .footer-main{
     display: flex;
     width: 575px;
-    margin-top: 20px;
+    margin-top: 14px;
 }
 
 i{
@@ -157,7 +157,20 @@ i{
 }
 
 .current-song{
-    width: 200px;
+    height: 40px;
+    width: 300px;
+    text-align: center;
+    line-height: 40px;
+    margin-left: -100px;
+    color: white;
+    border: 1.5px solid white;
+    background-color: black;
+    border-radius: 15px;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    cursor: pointer;
+
 }
 
 .icons{
