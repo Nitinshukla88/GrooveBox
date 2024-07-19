@@ -133,8 +133,8 @@ span{
 .footer{
     display: flex;
     align-items: center;
+    height: 75px;
     justify-content: center;
-    padding: 15px;
     flex-direction: column;
     background-color: rgb(219, 185, 185);
     margin-top: 13px;
@@ -176,9 +176,3 @@ i{
 .icons{
     margin-left: 65px;
 }
-/* .current-song{
-    height: 30px;
-    width: 100px;
-    border: 1px solid black;
-    padding: 8px;
-} */

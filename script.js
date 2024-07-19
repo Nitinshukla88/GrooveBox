@@ -1,30 +1,48 @@
+let isappended_newdiv = false;
+let is_playing_song = false;
+let curr_music_path = "";
+
 document.addEventListener("click", function (event) {
-  let newdiv = document.createElement('div');
-  let current_playing_song = "";
+  
 
   let data_recevied = event.target.textContent;
   
-  newdiv.classList.add("current-song");
-  newdiv.style.textContent = data_recevied;
-  
-  const parentdiv = document.querySelector('.footer-main');
-  parentdiv.appendChild(newdiv);
+  if(isappended_newdiv == true){
+    let ele = document.querySelector('.current-song');
+    console.log(ele);
+    ele.innerHTML = data_recevied;
+  }else{
+    let newdiv = document.createElement('div');
+    newdiv.classList.add("current-song");
+    newdiv.innerHTML = data_recevied;
+    const parentdiv = document.querySelector('.footer-main');
+    parentdiv.appendChild(newdiv);
+    isappended_newdiv = true;
+  }
 
   if(data_recevied == "One call away - By charlie puth"){
-    if(current_playing_song==""){
+    if(is_playing_song == false){
       new Audio("/songs/one call away.mp3").play();
-      current_playing_song = "One call away - By charlie puth";
+      is_playing_song = true;
     }else{
       
-      Audio.currentTime = 0;
-      Audio.pause();
+      // new Audio(curr_music_path).currentTime = 0;
+      new Audio(curr_music_path).pause();
       new Audio("/songs/one call away.mp3").play();
-      current_playing_song = "One call away - By charlie puth";
+      current_playing_song = true;
+      curr_music_path = "/songs/one call away.mp3";
     }
     
   }else if(data_recevied == "Chahun main ya na - Ashiqui 2"){
+    if(is_playing_song == true){
+      // new Audio(curr_music_path).currentTime = 0;
+      new Audio(curr_music_path).pause();
+      new Audio("/songs/chahu mein ya na.mp3").play();
+      curr_music_path = "/songs/chahu mein ya na.mp3";
+    }
     new Audio("/songs/chahu mein ya na.mp3").play();
-    current_playing_song = "Chahun main ya na - Ashiqui 2";
+    is_playing_song = true;
+    curr_music_path = "/songs/chahu mein ya na.mp3";
   }else if(data_recevied == "Mercy - By Badshah"){
     new Audio("/songs/mercy.mp3").play();
   }else if(data_recevied == "Malhari - Bajirao Mastani"){
