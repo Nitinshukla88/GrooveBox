@@ -9,7 +9,10 @@
 html,body{
     height: 100%;
     width: 100%;
-    background-color:rgb(14, 13, 13)
+    background: url(Body-background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 ul{
@@ -31,11 +34,12 @@ li{
     font-weight: 600;
     font-style: normal;
 }
-.nav-li:hover{
+.nav-li{
     cursor: pointer;
     background-color: black;
     color: white;
     border-radius: 8px;
+    margin: 5px;
 }
 #App-name{
     font-size: 1.3rem;
@@ -134,7 +138,6 @@ span{
     display: flex;
     align-items: center;
     height: 75px;
-    justify-content: center;
     flex-direction: column;
     background-color: rgb(219, 185, 185);
     margin-top: 13px;
@@ -143,17 +146,17 @@ span{
 input[type=range]{
     width: 67%;
     height: 5px;
+    margin-top: 10px;
+}
+
+input:hover{
+    cursor: pointer;
 }
 
 .footer-main{
     display: flex;
     width: 575px;
     margin-top: 14px;
-}
-
-i{
-    height: 25px;
-    width: 24px;
 }
 
 .current-song{
