@@ -1,6 +1,13 @@
 let is_playing_song = false;
 let curr_audio = "";
 
+let seek = document.getElementById("#seeker");
+
+seek.addEventListener("change", function(){
+  const clickpoint = seek.value;
+  curr_audio.currentTime = (curr_audio.duration || 0) * clickpoint;
+})
+
 function range_slider(music) {
   music.addEventListener("timeupdate", () => {
     const percent = (music.currentTime / music.duration) * 100;
