@@ -1,6 +1,7 @@
 let is_playing_song = false;
 let curr_audio = "";
 let selected_user_song = "";
+let is_newsong_selected = false;
 
 let seek = document.getElementById("seeker");
 
@@ -12,11 +13,9 @@ seek.addEventListener("change", function () {
 function range_slider(music) {
   music.addEventListener("timeupdate", () => {
     seeker.value = (music.currentTime / music.duration) * 100;
-    console.log(seeker.value);
     if (seeker.value == 100) {
       seeker.value = 0;
       let div_to_be_remove = document.querySelector(".current-song");
-      console.log(div_to_be_remove);
       div_to_be_remove.remove();
       is_playing_song = false;
     }
@@ -31,7 +30,7 @@ play_pause_element.addEventListener("click", function () {
     play_pause_element.classList.remove("fa-circle-pause");
     play_pause_element.classList.add("fa-circle-play");
     is_playing_song = false;
-  }else {
+  } else {
     selected_user_song.play();
     play_pause_element.classList.remove("fa-circle-play");
     play_pause_element.classList.add("fa-circle-pause");
@@ -51,11 +50,13 @@ let song_elements = document.querySelectorAll(".songs");
 for (i = 0; i < song_elements.length; i++) {
   song_elements[i].addEventListener("click", function (event) {
     let data_recevied = event.target.textContent;
-    if (is_playing_song == true) {
+    if (is_newsong_selected == true) {
       let ele = document.querySelector(".current-song");
       ele.innerHTML = data_recevied;
       curr_audio.pause();
       curr_audio.currentTime = 0;
+      play_pause_element.classList.remove("fa-circle-pause");
+      play_pause_element.classList.add("fa-circle-play");
       if (data_recevied == "One call away - By charlie puth") {
         selected_user_song = song1;
         curr_audio = song1;
@@ -81,6 +82,7 @@ for (i = 0; i < song_elements.length; i++) {
       newdiv.innerHTML = data_recevied;
       const parentdiv = document.querySelector(".current");
       parentdiv.appendChild(newdiv);
+      is_newsong_selected = true;
       if (data_recevied == "One call away - By charlie puth") {
         selected_user_song = song1;
         curr_audio = song1;
