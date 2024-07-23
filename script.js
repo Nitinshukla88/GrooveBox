@@ -68,7 +68,8 @@ for (i = 0; i < song_elements.length; i++) {
       let newdiv = document.createElement("div");
       newdiv.classList.add("current-song");
       newdiv.innerHTML = data_recevied;
-      const parentdiv = document.querySelector(".footer-main");
+      const parentdiv = document.querySelector(".current");
+      console.log(parentdiv);
       parentdiv.appendChild(newdiv);
       if (data_recevied == "One call away - By charlie puth") {
         song1.play();

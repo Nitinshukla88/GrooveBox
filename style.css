@@ -144,9 +144,10 @@ span{
 }
 
 input[type=range]{
-    width: 67%;
+    width: 80%;
     height: 5px;
     margin-top: 10px;
+    accent-color: #83580b;
 }
 
 input:hover{
@@ -155,8 +156,9 @@ input:hover{
 
 .footer-main{
     display: flex;
-    width: 575px;
-    margin-top: 14px;
+    margin-top: 9px;
+    align-items: center;
+    justify-content: center;
 }
 
 .current-song{
@@ -164,7 +166,7 @@ input:hover{
     width: 300px;
     text-align: center;
     line-height: 40px;
-    margin-left: -100px;
+    margin-left: -312px;
     color: white;
     border: 1.5px solid white;
     background-color: black;
@@ -176,6 +178,6 @@ input:hover{
 
 }
 
-.icons{
-    margin-left: 65px;
+.icons i{
+    cursor: pointer;
 }
