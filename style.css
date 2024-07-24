@@ -92,7 +92,6 @@ li{
     height: 330px;
     width: 390px;
     margin: 25px;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -145,7 +144,7 @@ span{
 
 input[type=range]{
     width: 80%;
-    height: 5px;
+    height: 7px;
     margin-top: 10px;
     accent-color: #83580b;
 }
