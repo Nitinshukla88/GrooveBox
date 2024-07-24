@@ -15,7 +15,7 @@ seek.addEventListener("change", function () {
 function range_slider(music) {
   music.addEventListener("timeupdate", () => {
     seeker.value = (music.currentTime / music.duration) * 100;
-    if (seeker.value == 100 && is_seeker_100attained == false) {
+    if (music.currentTime == music.duration) {
       seeker.value = 0;
       let div_to_be_remove = document.querySelector(".current-song");
       div_to_be_remove.remove();
@@ -31,6 +31,9 @@ function range_slider(music) {
 let backward_play_btn = document.querySelector(".play-backward");
 let forward_play_btn = document.querySelector(".play-backward");
 
+let arrayOf_songDivs = document.querySelectorAll(".songs");
+console.log(arrayOf_songDivs[2].innerText);
+
 backward_play_btn.addEventListener("click", function () {
   if ((song_index == 1)) {
     let ele = document.querySelector(".current-song");
@@ -39,9 +42,12 @@ backward_play_btn.addEventListener("click", function () {
     is_playing_song = false;
     curr_audio.currentTime = 0;
     seeker.value = 0;
+    curr_audio = song6;
+    selected_user_song = song6;
     play_pause_element.classList.remove("fa-circle-pause");
     play_pause_element.classList.add("fa-circle-play");
-    selected_user_song = song6;
+  }else{
+
   }
 });
 
