@@ -5,6 +5,13 @@ let is_newsong_selected = false;
 let is_seeker_100attained = false;
 let song_index = 0;
 
+const song1 = new Audio("/songs/one call away.mp3");
+const song2 = new Audio("/songs/chahu mein ya na.mp3");
+const song3 = new Audio("/songs/mercy.mp3");
+const song4 = new Audio("/songs/malhari.mp3");
+const song5 = new Audio("/songs/act my age.mp3");
+const song6 = new Audio("/songs/pi jaun.mp3");
+
 let seek = document.getElementById("seeker");
 
 seek.addEventListener("change", function () {
@@ -32,27 +39,41 @@ let backward_play_btn = document.querySelector(".play-backward");
 let forward_play_btn = document.querySelector(".play-backward");
 
 let arrayOf_songDivs = document.querySelectorAll(".songs");
-console.log(arrayOf_songDivs[2].innerText);
+// console.log(arrayOf_songDivs[2].innerText);
+
 
 backward_play_btn.addEventListener("click", function () {
+  console.log(song_index);
   if ((song_index == 1)) {
     let ele = document.querySelector(".current-song");
     ele.innerHTML = "Pi jaun - Farhan Saeed";
     curr_audio.pause();
-    is_playing_song = false;
     curr_audio.currentTime = 0;
+    is_playing_song = false;
     seeker.value = 0;
     curr_audio = song6;
     selected_user_song = song6;
     play_pause_element.classList.remove("fa-circle-pause");
     play_pause_element.classList.add("fa-circle-play");
   }else{
-
+    let ele = document.querySelector(".current-song");
+    ele.innerHTML = arrayOf_songDivs[song_index-2].innerHTML;
+    curr_audio.pause();
+    curr_audio.currentTime = 0
+    is_playing_song = false;
+    seeker.value = 0;
+    curr_audio = "song"+`${song_index-1}`;
+    console.log(curr_audio);
+    selected_user_song = "song"+`${song_index-1}`;
+    console.log(selected_user_song);
+    play_pause_element.classList.remove("fa-circle-pause");
+    play_pause_element.classList.add("fa-circle-play");
   }
 });
 
 const play_pause_element = document.querySelector(".playbtn");
 
+console.log(selected_user_song);
 play_pause_element.addEventListener("click", function () {
   if (is_playing_song == true) {
     curr_audio.pause();
@@ -60,6 +81,7 @@ play_pause_element.addEventListener("click", function () {
     play_pause_element.classList.add("fa-circle-play");
     is_playing_song = false;
   } else {
+    console.log(selected_user_song);
     selected_user_song.play();
     play_pause_element.classList.remove("fa-circle-play");
     play_pause_element.classList.add("fa-circle-pause");
@@ -67,13 +89,6 @@ play_pause_element.addEventListener("click", function () {
     is_playing_song = true;
   }
 });
-
-const song1 = new Audio("/songs/one call away.mp3");
-const song2 = new Audio("/songs/chahu mein ya na.mp3");
-const song3 = new Audio("/songs/mercy.mp3");
-const song4 = new Audio("/songs/malhari.mp3");
-const song5 = new Audio("/songs/act my age.mp3");
-const song6 = new Audio("/songs/pi jaun.mp3");
 
 let song_elements = document.querySelectorAll(".songs");
 for (i = 0; i < song_elements.length; i++) {
