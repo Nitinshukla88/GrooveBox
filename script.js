@@ -2,8 +2,7 @@ let is_playing_song = false;
 let curr_audio = "";
 let selected_user_song = "";
 let is_newsong_selected = false;
-let is_seeker_100attained = false;
-let song_index = 0;
+let song_index = -1;
 
 const song1 = new Audio("/songs/one call away.mp3");
 const song2 = new Audio("/songs/chahu mein ya na.mp3");
@@ -11,6 +10,8 @@ const song3 = new Audio("/songs/mercy.mp3");
 const song4 = new Audio("/songs/malhari.mp3");
 const song5 = new Audio("/songs/act my age.mp3");
 const song6 = new Audio("/songs/pi jaun.mp3");
+
+let arrayOfsongs = [song1, song2, song3, song4, song5, song6];
 
 let seek = document.getElementById("seeker");
 
@@ -30,7 +31,6 @@ function range_slider(music) {
       is_newsong_selected = false;
       play_pause_element.classList.remove("fa-circle-pause");
       play_pause_element.classList.add("fa-circle-play");
-      is_seeker_100attained = true;
     }
   });
 }
@@ -39,33 +39,30 @@ let backward_play_btn = document.querySelector(".play-backward");
 let forward_play_btn = document.querySelector(".play-backward");
 
 let arrayOf_songDivs = document.querySelectorAll(".songs");
-// console.log(arrayOf_songDivs[2].innerText);
 
 
 backward_play_btn.addEventListener("click", function () {
   console.log(song_index);
-  if ((song_index == 1)) {
+  if ((song_index == 0)) {
     let ele = document.querySelector(".current-song");
     ele.innerHTML = "Pi jaun - Farhan Saeed";
     curr_audio.pause();
     curr_audio.currentTime = 0;
     is_playing_song = false;
     seeker.value = 0;
-    curr_audio = song6;
-    selected_user_song = song6;
+    curr_audio = arrayOfsongs[arrayOfsongs.length-1];
+    selected_user_song = arrayOfsongs[arrayOfsongs.length-1];
     play_pause_element.classList.remove("fa-circle-pause");
     play_pause_element.classList.add("fa-circle-play");
   }else{
     let ele = document.querySelector(".current-song");
-    ele.innerHTML = arrayOf_songDivs[song_index-2].innerHTML;
+    ele.innerHTML = arrayOf_songDivs[song_index-1].innerHTML;
     curr_audio.pause();
     curr_audio.currentTime = 0
     is_playing_song = false;
     seeker.value = 0;
-    curr_audio = "song"+`${song_index-1}`;
-    console.log(curr_audio);
-    selected_user_song = "song"+`${song_index-1}`;
-    console.log(selected_user_song);
+    curr_audio = arrayOfsongs[song_index-1];
+    selected_user_song = arrayOfsongs[song_index-1];
     play_pause_element.classList.remove("fa-circle-pause");
     play_pause_element.classList.add("fa-circle-play");
   }
@@ -104,27 +101,27 @@ for (i = 0; i < song_elements.length; i++) {
       if (data_recevied == "One call away - By charlie puth") {
         selected_user_song = song1;
         curr_audio = song1;
-        song_index = 1;
+        song_index = 0;
       } else if (data_recevied == "Chahun main ya na - Ashiqui 2") {
         selected_user_song = song2;
         curr_audio = song2;
-        song_index = 2;
+        song_index = 1;
       } else if (data_recevied == "Mercy - By Badshah") {
         selected_user_song = song3;
         curr_audio = song3;
-        song_index = 3;
+        song_index = 2;
       } else if (data_recevied == "Malhari - Bajirao Mastani") {
         selected_user_song = song4;
         curr_audio = song4;
-        song_index = 4;
+        song_index = 3;
       } else if (data_recevied == "Act my age - By One direction") {
         selected_user_song = song5;
         curr_audio = song5;
-        song_index = 5;
+        song_index = 4;
       } else if (data_recevied == "Pi jaun - Farhan Saeed") {
         selected_user_song = song6;
         curr_audio = song6;
-        song_index = 6;
+        song_index = 5;
       }
     } else {
       let newdiv = document.createElement("div");
@@ -136,27 +133,27 @@ for (i = 0; i < song_elements.length; i++) {
       if (data_recevied == "One call away - By charlie puth") {
         selected_user_song = song1;
         curr_audio = song1;
-        song_index = 1;
+        song_index = 0;
       } else if (data_recevied == "Chahun main ya na - Ashiqui 2") {
         selected_user_song = song2;
         curr_audio = song2;
-        song_index = 2;
+        song_index = 1;
       } else if (data_recevied == "Mercy - By Badshah") {
         selected_user_song = song3;
         curr_audio = song3;
-        song_index = 3;
+        song_index = 2;
       } else if (data_recevied == "Malhari - Bajirao Mastani") {
         selected_user_song = song4;
         curr_audio = song4;
-        song_index = 4;
+        song_index = 3;
       } else if (data_recevied == "Act my age - By One direction") {
         selected_user_song = song5;
         curr_audio = song5;
-        song_index = 5;
+        song_index = 4;
       } else if (data_recevied == "Pi jaun - Farhan Saeed") {
         selected_user_song = song6;
         curr_audio = song6;
-        song_index = 6;
+        song_index = 5;
       }
     }
   });
