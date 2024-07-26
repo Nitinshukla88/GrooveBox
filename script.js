@@ -9,7 +9,6 @@ song1.onloadedmetadata = ()=>{
   let total_duration = song1.duration;
   let minutes = total_duration/60 | 0;
   let seconds = total_duration%60 | 0;
-  console.log(`song duration is 0${minutes}:${seconds}`);
 }
 const song2 = new Audio("/songs/chahu mein ya na.mp3");
 const song3 = new Audio("/songs/mercy.mp3");
@@ -26,8 +25,21 @@ seek.addEventListener("change", function () {
   curr_audio.currentTime = (curr_audio.duration || 0) * clickpoint;
 });
 
+let startTimer = document.querySelector(".start");
+let arr = startTimer.innerText.split(":");
+
 function range_slider(music) {
   music.addEventListener("timeupdate", () => {
+    let curr_time_ofSong = music.currentTime |0;
+    console.log(curr_time_ofSong);
+    let min = 0;
+    if((curr_time_ofSong%10) >= 1 && (curr_time_ofSong%10) <=9){
+      startTimer.innerHTML = `00:${min}`+`${curr_time_ofSong%10}`;
+    }
+    if(curr_time_ofSong%10 == 0){
+      startTimer.innerHTML = "00:"+`${min+1}0`;
+      min = min+1;
+    }
     seeker.value = (music.currentTime / music.duration) * 100;
     if (music.currentTime == music.duration) {
       seeker.value = 0;

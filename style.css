@@ -126,10 +126,11 @@ li{
 }
 
 span img{
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 45px;
     border-radius: 50%;
     border: 1.5px solid black;
+    margin-top: 9px;
 }
 
 .duration{
@@ -137,12 +138,13 @@ span img{
     background-color: purple;
     color: white;
     height: 45px;
+    width: 60px;
     border-radius: 15px;
-    margin-top: 8px;
     margin-top: 8px;
     line-height: 2.9;
     font-family: "Varela Round", sans-serif;
     font-weight: 900;
+    text-align: center;
 }
 
 
@@ -172,17 +174,20 @@ input:hover{
 
 .footer-main{
     display: flex;
-    margin-top: 9px;
-    align-items: center;
-    justify-content: center;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    align-items: center; 
+    justify-content: center; 
+    position: relative;
 }
 
 .current-song{
     height: 40px;
-    width: 300px;
+    width: 290px;
     text-align: center;
     line-height: 40px;
-    margin-left: -312px;
+    margin-left: -309px;
     color: white;
     border: 1.5px solid white;
     background-color: black;
@@ -200,5 +205,14 @@ input:hover{
 
 .music-dur{
     border: 1px solid black;
-    margin-right: -41px;
+    position: absolute;
+    right: 140px;
+    padding: 3px;
+}
+
+.start{
+    left: 140px;
+    border: 1px solid black;
+    position: absolute;
+    padding: 3px;
 }
