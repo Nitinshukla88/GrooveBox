@@ -9,10 +9,20 @@
 html,body{
     height: 100%;
     width: 100%;
-    background: url(Body-background.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+
+.main-cont{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#particles-js{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    z-index: 0;
 }
 
 ul{
@@ -122,12 +132,19 @@ span img{
     border: 1.5px solid black;
 }
 
-span{
-    width: 34px;
-    height: 34px;
-    margin-top: 10px;
-    margin-right: 3px;
+.duration{
+    border: 1px solid white;
+    background-color: purple;
+    color: white;
+    height: 45px;
+    border-radius: 15px;
+    margin-top: 8px;
+    margin-top: 8px;
+    line-height: 2.9;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 900;
 }
+
 
 .temp{
     display: flex;
@@ -179,4 +196,9 @@ input:hover{
 
 .icons i{
     cursor: pointer;
+}
+
+.music-dur{
+    border: 1px solid black;
+    margin-right: -41px;
 }

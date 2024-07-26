@@ -5,6 +5,12 @@ let is_newsong_selected = false;
 let song_index = -1;
 
 const song1 = new Audio("/songs/one call away.mp3");
+song1.onloadedmetadata = ()=>{
+  let total_duration = song1.duration;
+  let minutes = total_duration/60 | 0;
+  let seconds = total_duration%60 | 0;
+  console.log(`song duration is 0${minutes}:${seconds}`);
+}
 const song2 = new Audio("/songs/chahu mein ya na.mp3");
 const song3 = new Audio("/songs/mercy.mp3");
 const song4 = new Audio("/songs/malhari.mp3");
@@ -42,7 +48,6 @@ let arrayOf_songDivs = document.querySelectorAll(".songs");
 
 
 backward_play_btn.addEventListener("click", function () {
-  console.log(song_index);
   if ((song_index == 0)) {
     let ele = document.querySelector(".current-song");
     ele.innerHTML = "Pi jaun - Farhan Saeed";
@@ -50,6 +55,7 @@ backward_play_btn.addEventListener("click", function () {
     curr_audio.currentTime = 0;
     is_playing_song = false;
     seeker.value = 0;
+    song_index = 5;
     curr_audio = arrayOfsongs[arrayOfsongs.length-1];
     selected_user_song = arrayOfsongs[arrayOfsongs.length-1];
     play_pause_element.classList.remove("fa-circle-pause");
@@ -65,12 +71,12 @@ backward_play_btn.addEventListener("click", function () {
     selected_user_song = arrayOfsongs[song_index-1];
     play_pause_element.classList.remove("fa-circle-pause");
     play_pause_element.classList.add("fa-circle-play");
+    song_index = song_index - 1;
   }
 });
 
 const play_pause_element = document.querySelector(".playbtn");
 
-console.log(selected_user_song);
 play_pause_element.addEventListener("click", function () {
   if (is_playing_song == true) {
     curr_audio.pause();
@@ -78,7 +84,6 @@ play_pause_element.addEventListener("click", function () {
     play_pause_element.classList.add("fa-circle-play");
     is_playing_song = false;
   } else {
-    console.log(selected_user_song);
     selected_user_song.play();
     play_pause_element.classList.remove("fa-circle-play");
     play_pause_element.classList.add("fa-circle-pause");
