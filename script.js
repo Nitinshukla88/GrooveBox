@@ -28,18 +28,12 @@ seek.addEventListener("change", function () {
 let startTimer = document.querySelector(".start");
 let arr = startTimer.innerText.split(":");
 
+
 function range_slider(music) {
   music.addEventListener("timeupdate", () => {
     let curr_time_ofSong = music.currentTime |0;
-    console.log(curr_time_ofSong);
-    let min = 0;
-    if((curr_time_ofSong%10) >= 1 && (curr_time_ofSong%10) <=9){
-      startTimer.innerHTML = `00:${min}`+`${curr_time_ofSong%10}`;
-    }
-    if(curr_time_ofSong%10 == 0){
-      startTimer.innerHTML = "00:"+`${min+1}0`;
-      min = min+1;
-    }
+    let min = curr_time_ofSong/10 |0;
+    startTimer.innerHTML = `0${curr_time_ofSong/60 | 0}:${min}`+`${curr_time_ofSong%10}`;
     seeker.value = (music.currentTime / music.duration) * 100;
     if (music.currentTime == music.duration) {
       seeker.value = 0;
