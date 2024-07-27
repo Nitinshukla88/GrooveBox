@@ -5,11 +5,6 @@ let is_newsong_selected = false;
 let song_index = -1;
 
 const song1 = new Audio("/songs/one call away.mp3");
-song1.onloadedmetadata = () => {
-  let total_duration = song1.duration;
-  let minutes = (total_duration / 60) | 0;
-  let seconds = total_duration % 60 | 0;
-};
 const song2 = new Audio("/songs/chahu mein ya na.mp3");
 const song3 = new Audio("/songs/mercy.mp3");
 const song4 = new Audio("/songs/malhari.mp3");

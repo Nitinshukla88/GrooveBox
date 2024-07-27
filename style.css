@@ -207,7 +207,10 @@ input:hover{
     border: 1px solid black;
     position: absolute;
     right: 140px;
-    padding: 3px;
+    background-color: purple;
+    border-radius: 6px;
+    color: white;
+    padding: 5px;
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
 }
@@ -216,7 +219,10 @@ input:hover{
     left: 140px;
     border: 1px solid black;
     position: absolute;
-    padding: 3px;
+    background-color: purple;
+    border-radius: 6px;
+    color: white;
+    padding: 5px;
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
 }
