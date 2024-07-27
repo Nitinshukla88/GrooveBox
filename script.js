@@ -3,6 +3,10 @@ let curr_audio = "";
 let selected_user_song = "";
 let is_newsong_selected = false;
 let song_index = -1;
+let step = 0;
+let val = true;
+let isDuration_jumped = false;
+let step_during_jump = 0;
 
 const song1 = new Audio("/songs/one call away.mp3");
 const song2 = new Audio("/songs/chahu mein ya na.mp3");
@@ -15,16 +19,27 @@ let arrayOfsongs = [song1, song2, song3, song4, song5, song6];
 
 let seek = document.getElementById("seeker");
 
+let startTimer = document.querySelector(".start");
+let endTimer = document.querySelector(".music-dur");
+let arr = startTimer.innerText.split(":");
+
 seek.addEventListener("change", function () {
   const clickpoint = seek.value / 100;
   curr_audio.currentTime = (curr_audio.duration || 0) * clickpoint;
+  let songs_current_time = curr_audio.currentTime | 0;
+  switch(songs_current_time / 60 | 0){
+    case 0: step_during_jump = 0; break;
+    case 1: step_during_jump = 6; break;
+    case 2: step_during_jump = 12; break;
+    case 3: step_during_jump = 18; break;
+    case 4: step_during_jump = 24; break;
+    case 5: step_during_jump = 30; break;
+    case 6: step_during_jump = 36; break;
+  }
+  console.log(songs_current_time);
+  console.log(step_during_jump);
+  isDuration_jumped = true;
 });
-
-let startTimer = document.querySelector(".start");
-let arr = startTimer.innerText.split(":");
-
-let step = 0;
-let val = true;
 
 function range_slider(music) {
   music.addEventListener("timeupdate", () => {
@@ -37,6 +52,11 @@ function range_slider(music) {
         val = true;
       }, 10000);
     }
+    if(isDuration_jumped == true){
+      step = step_during_jump;
+      console.log("Yes");
+    }
+    console.log(step);
     startTimer.innerHTML =
       `0${(curr_time_ofSong / 60) | 0}:${min - step}` +
       `${curr_time_ofSong % 10}`;
@@ -50,6 +70,8 @@ function range_slider(music) {
       is_newsong_selected = false;
       play_pause_element.classList.remove("fa-circle-pause");
       play_pause_element.classList.add("fa-circle-play");
+      startTimer.style.visibility = "hidden";
+      endTimer.style.visibility = "hidden";
     }
   });
 }
@@ -108,6 +130,8 @@ let song_elements = document.querySelectorAll(".songs");
 for (i = 0; i < song_elements.length; i++) {
   song_elements[i].addEventListener("click", function (event) {
     startTimer.innerHTML = "00:00";
+    startTimer.style.visibility = "visible";
+    endTimer.style.visibility = "visible";
     step = 0;
     val = true;
     let data_recevied = event.target.textContent;

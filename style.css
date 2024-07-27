@@ -213,6 +213,7 @@ input:hover{
     padding: 5px;
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
+    visibility: hidden;
 }
 
 .start{
@@ -225,4 +226,5 @@ input:hover{
     padding: 5px;
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
+    visibility: hidden;
 }
