@@ -54,7 +54,6 @@ function range_slider(music) {
     }
     if(isDuration_jumped == true){
       step = step_during_jump;
-      console.log("Yes");
     }
     console.log(step);
     startTimer.innerHTML =
