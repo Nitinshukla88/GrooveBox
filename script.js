@@ -5,11 +5,11 @@ let is_newsong_selected = false;
 let song_index = -1;
 
 const song1 = new Audio("/songs/one call away.mp3");
-song1.onloadedmetadata = ()=>{
+song1.onloadedmetadata = () => {
   let total_duration = song1.duration;
-  let minutes = total_duration/60 | 0;
-  let seconds = total_duration%60 | 0;
-}
+  let minutes = (total_duration / 60) | 0;
+  let seconds = total_duration % 60 | 0;
+};
 const song2 = new Audio("/songs/chahu mein ya na.mp3");
 const song3 = new Audio("/songs/mercy.mp3");
 const song4 = new Audio("/songs/malhari.mp3");
@@ -28,14 +28,26 @@ seek.addEventListener("change", function () {
 let startTimer = document.querySelector(".start");
 let arr = startTimer.innerText.split(":");
 
+let step = 0;
+let val = true;
 
 function range_slider(music) {
   music.addEventListener("timeupdate", () => {
-    let curr_time_ofSong = music.currentTime |0;
-    let min = curr_time_ofSong/10 |0;
-    startTimer.innerHTML = `0${curr_time_ofSong/60 | 0}:${min}`+`${curr_time_ofSong%10}`;
+    let curr_time_ofSong = music.currentTime | 0;
+    let min = (curr_time_ofSong / 10) | 0;
+    if (curr_time_ofSong != 0 && val == true && curr_time_ofSong % 60 == 0) {
+      step += 6;
+      val = false;
+      setTimeout(() => {
+        val = true;
+      }, 10000);
+    }
+    startTimer.innerHTML =
+      `0${(curr_time_ofSong / 60) | 0}:${min - step}` +
+      `${curr_time_ofSong % 10}`;
     seeker.value = (music.currentTime / music.duration) * 100;
     if (music.currentTime == music.duration) {
+      startTimer.innerHTML = "00:00";
       seeker.value = 0;
       let div_to_be_remove = document.querySelector(".current-song");
       div_to_be_remove.remove();
@@ -52,9 +64,8 @@ let forward_play_btn = document.querySelector(".play-backward");
 
 let arrayOf_songDivs = document.querySelectorAll(".songs");
 
-
 backward_play_btn.addEventListener("click", function () {
-  if ((song_index == 0)) {
+  if (song_index == 0) {
     let ele = document.querySelector(".current-song");
     ele.innerHTML = "Pi jaun - Farhan Saeed";
     curr_audio.pause();
@@ -62,19 +73,19 @@ backward_play_btn.addEventListener("click", function () {
     is_playing_song = false;
     seeker.value = 0;
     song_index = 5;
-    curr_audio = arrayOfsongs[arrayOfsongs.length-1];
-    selected_user_song = arrayOfsongs[arrayOfsongs.length-1];
+    curr_audio = arrayOfsongs[arrayOfsongs.length - 1];
+    selected_user_song = arrayOfsongs[arrayOfsongs.length - 1];
     play_pause_element.classList.remove("fa-circle-pause");
     play_pause_element.classList.add("fa-circle-play");
-  }else{
+  } else {
     let ele = document.querySelector(".current-song");
-    ele.innerHTML = arrayOf_songDivs[song_index-1].innerHTML;
+    ele.innerHTML = arrayOf_songDivs[song_index - 1].innerHTML;
     curr_audio.pause();
-    curr_audio.currentTime = 0
+    curr_audio.currentTime = 0;
     is_playing_song = false;
     seeker.value = 0;
-    curr_audio = arrayOfsongs[song_index-1];
-    selected_user_song = arrayOfsongs[song_index-1];
+    curr_audio = arrayOfsongs[song_index - 1];
+    selected_user_song = arrayOfsongs[song_index - 1];
     play_pause_element.classList.remove("fa-circle-pause");
     play_pause_element.classList.add("fa-circle-play");
     song_index = song_index - 1;
@@ -101,6 +112,9 @@ play_pause_element.addEventListener("click", function () {
 let song_elements = document.querySelectorAll(".songs");
 for (i = 0; i < song_elements.length; i++) {
   song_elements[i].addEventListener("click", function (event) {
+    startTimer.innerHTML = "00:00";
+    step = 0;
+    val = true;
     let data_recevied = event.target.textContent;
     if (is_newsong_selected == true) {
       let ele = document.querySelector(".current-song");

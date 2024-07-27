@@ -208,6 +208,8 @@ input:hover{
     position: absolute;
     right: 140px;
     padding: 3px;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 600;
 }
 
 .start{
@@ -215,4 +217,6 @@ input:hover{
     border: 1px solid black;
     position: absolute;
     padding: 3px;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 600;
 }
