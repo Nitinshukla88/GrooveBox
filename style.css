@@ -9,6 +9,7 @@
 html,body{
     height: 100%;
     width: 100%;
+    cursor: url("arrow-pointer-solid.svg"), default;
 }
 
 .main-cont{
@@ -45,12 +46,19 @@ li{
     font-style: normal;
 }
 .nav-li{
-    cursor: pointer;
     background-color: black;
     color: white;
     border-radius: 8px;
     margin: 5px;
 }
+
+.nav-li:hover{
+    cursor: url("icons8-hand-cursor\ \(2\).svg"), pointer;
+    border: 1px solid black;
+    background-color: white;
+    color: purple;
+}
+
 #App-name{
     font-size: 1.3rem;
     text-decoration: none;
@@ -122,7 +130,13 @@ li{
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
     font-style: normal;
-    cursor: pointer;
+}
+
+.songs:hover{
+    cursor: url("icons8-hand-cursor\ \(2\).svg"), pointer;
+    background-color: white;
+    color: purple;
+    border: 1px solid black;
 }
 
 span img{
@@ -169,7 +183,7 @@ input[type=range]{
 }
 
 input:hover{
-    cursor: pointer;
+    cursor: url("icons8-hand-cursor\ \(2\).svg"), pointer;
 }
 
 .footer-main{
@@ -195,12 +209,12 @@ input:hover{
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
     font-style: normal;
-    cursor: pointer;
+    cursor: url("hand-pointer-regular\ \(1\).svg"), pointer;
 
 }
 
 .icons i{
-    cursor: pointer;
+    cursor: url("hand-pointer-regular\ \(1\).svg"), pointer;
 }
 
 .music-dur{
