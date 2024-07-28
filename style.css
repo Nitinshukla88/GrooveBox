@@ -242,3 +242,12 @@ input:hover{
     font-weight: 600;
     visibility: hidden;
 }
+
+.start:active{
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+}
+
+.start:hover{
+    transform: scale(1.2) perspective(10px);
+}

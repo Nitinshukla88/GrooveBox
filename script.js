@@ -7,6 +7,7 @@ let step = 0;
 let val = true;
 let isDuration_jumped = false;
 let step_during_jump = 0;
+let entereed_into = false;
 
 const song1 = new Audio("/songs/one call away.mp3");
 const song2 = new Audio("/songs/chahu mein ya na.mp3");
@@ -54,11 +55,16 @@ function range_slider(music) {
     }
     if(isDuration_jumped == true){
       step = step_during_jump;
+      entereed_into = true;
     }
     console.log(step);
     startTimer.innerHTML =
       `0${(curr_time_ofSong / 60) | 0}:${min - step}` +
       `${curr_time_ofSong % 10}`;
+    if(entereed_into == true){
+      isDuration_jumped = false;
+      entereed_into = false;
+    }
     seeker.value = (music.currentTime / music.duration) * 100;
     if (music.currentTime == music.duration) {
       startTimer.innerHTML = "00:00";
@@ -128,13 +134,14 @@ play_pause_element.addEventListener("click", function () {
 let song_elements = document.querySelectorAll(".songs");
 for (i = 0; i < song_elements.length; i++) {
   song_elements[i].addEventListener("click", function (event) {
-    startTimer.innerHTML = "00:00";
     startTimer.style.visibility = "visible";
     endTimer.style.visibility = "visible";
     step = 0;
     val = true;
+    isDuration_jumped = false;
     let data_recevied = event.target.textContent;
     if (is_newsong_selected == true) {
+      startTimer.innerHTML = "00:00";
       let ele = document.querySelector(".current-song");
       ele.innerHTML = data_recevied;
       curr_audio.pause();
@@ -171,6 +178,7 @@ for (i = 0; i < song_elements.length; i++) {
       newdiv.classList.add("current-song");
       newdiv.innerHTML = data_recevied;
       const parentdiv = document.querySelector(".current");
+      startTimer.innerHTML = "00:00";
       parentdiv.appendChild(newdiv);
       is_newsong_selected = true;
       if (data_recevied == "One call away - By charlie puth") {
