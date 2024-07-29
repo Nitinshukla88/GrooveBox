@@ -16,6 +16,11 @@ const song4 = new Audio("/songs/malhari.mp3");
 const song5 = new Audio("/songs/act my age.mp3");
 const song6 = new Audio("/songs/pi jaun.mp3");
 
+const clickSound = new Audio("metallic-click.wav");
+document.addEventListener("click", function(){
+  clickSound.play();
+});
+
 let arrayOfsongs = [song1, song2, song3, song4, song5, song6];
 let durationOfsongs = ["03:12", "05:04", "02:42", "04:04", "03:18", "04:43"];
 
@@ -87,6 +92,9 @@ let forward_play_btn = document.querySelector(".play-backward");
 let arrayOf_songDivs = document.querySelectorAll(".songs");
 
 backward_play_btn.addEventListener("click", function () {
+  step = 0;
+  val = true;
+  isDuration_jumped = false;
   if (song_index == 0) {
     let ele = document.querySelector(".current-song");
     ele.innerHTML = "Pi jaun - Farhan Saeed";
