@@ -17,6 +17,7 @@ const song5 = new Audio("/songs/act my age.mp3");
 const song6 = new Audio("/songs/pi jaun.mp3");
 
 let arrayOfsongs = [song1, song2, song3, song4, song5, song6];
+let durationOfsongs = ["03:12", "05:04", "02:42", "04:04", "03:18", "04:43"];
 
 let seek = document.getElementById("seeker");
 
@@ -67,8 +68,7 @@ function range_slider(music) {
     }
     seeker.value = (music.currentTime / music.duration) * 100;
     if (music.currentTime == music.duration) {
-      startTimer.innerHTML = "00:00";
-      seeker.value = 0;
+      seek.value = 0;
       let div_to_be_remove = document.querySelector(".current-song");
       div_to_be_remove.remove();
       is_playing_song = false;
@@ -173,6 +173,7 @@ for (i = 0; i < song_elements.length; i++) {
         curr_audio = song6;
         song_index = 5;
       }
+      endTimer.innerHTML = durationOfsongs[song_index];
     } else {
       let newdiv = document.createElement("div");
       newdiv.classList.add("current-song");
@@ -206,6 +207,7 @@ for (i = 0; i < song_elements.length; i++) {
         curr_audio = song6;
         song_index = 5;
       }
+      endTimer.innerHTML = durationOfsongs[song_index];
     }
   });
 }

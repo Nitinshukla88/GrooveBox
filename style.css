@@ -1,253 +1,266 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap");
 
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-html,body{
-    height: 100%;
-    width: 100%;
-    cursor: url("arrow-pointer-solid.svg"), default;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.main-cont{
-    height: 100%;
-    width: 100%;
-    position: absolute;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  cursor: url("arrow-pointer-solid.svg"), default;
 }
 
-#particles-js{
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    position: absolute;
-    z-index: 0;
+.main-cont {
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
-ul{
-    display: flex;
-    height: 65px;
-    background-color: rgb(219, 185, 185);
-    align-items: center;
+#particles-js {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  z-index: 0;
 }
 
-li img{
-    height: 55px;
-    width: 55px;
-    margin: 5px;
-}
-li{
-    list-style-type: none;
-    padding: 8px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-}
-.nav-li{
-    background-color: black;
-    color: white;
-    border-radius: 8px;
-    margin: 5px;
+ul {
+  display: flex;
+  height: 65px;
+  background-color: rgb(219, 185, 185);
+  align-items: center;
 }
 
-.nav-li:hover{
-    cursor: url("icons8-hand-cursor\ \(2\).svg"), pointer;
-    border: 1px solid black;
-    background-color: white;
-    color: purple;
+li img {
+  height: 55px;
+  width: 55px;
+  margin: 5px;
+}
+li {
+  list-style-type: none;
+  padding: 8px;
+  font-family: "Varela Round", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.nav-li {
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  margin: 5px;
 }
 
-#App-name{
-    font-size: 1.3rem;
-    text-decoration: none;
-    padding-left: 0px;
-    color: rgb(95, 18, 95);
+
+.nav-li:hover {
+  cursor: url("icons8-hand-cursor\ \(2\).svg"), pointer;
+  background-color: white;
+  color: purple;
 }
 
-.main-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+#App-name {
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding-left: 0px;
+  color: rgb(95, 18, 95);
 }
 
-.chotu-container{
-    height: 62vh;
-    width: 150vh;
-    background: url(Background.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 15px;
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.main-container p{
-    font-family: "Varela Round", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 3rem;
-    padding: 10px;
-    background: linear-gradient(to right, rgba(255, 215, 255, 0) 0%, rgba(225, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0) 61%), linear-gradient(rgb(97, 183, 217) 52%, rgb(224, 246, 255) 60%, rgb(78, 99, 132) 61%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: wave 2000ms ease alternate infinite;
-    transition: all 0.6s ease;
+.chotu-container {
+  height: 62vh;
+  width: 150vh;
+  background: url(Background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+}
+
+.main-container p {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3rem;
+  padding: 10px;
+  background: linear-gradient(
+      to right,
+      rgba(255, 215, 255, 0) 0%,
+      rgba(225, 255, 255, 0.5) 20%,
+      rgba(255, 255, 255, 0) 61%
+    ),
+    linear-gradient(
+      rgb(97, 183, 217) 52%,
+      rgb(224, 246, 255) 60%,
+      rgb(78, 99, 132) 61%
+    );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: wave 2000ms ease alternate infinite;
+  transition: all 0.6s ease;
 }
 
 @keyframes wave {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 70vw 40px;
-    }
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 70vw 40px;
+  }
 }
 
-.song-list{
-    height: 330px;
-    width: 390px;
-    margin: 25px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 13px;
+.song-list {
+  height: 330px;
+  width: 390px;
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 13px;
 }
 
-.songs{
-    height: 45px;
-    width: 300px;
-    text-align: center;
-    line-height: 43px;
-    margin-left: 22px;
-    color: white;
-    border: 1.5px solid white;
-    background-color: black;
-    margin: 8px;
-    border-radius: 15px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: 600;
-    font-style: normal;
+.songs {
+  height: 45px;
+  width: 300px;
+  text-align: center;
+  line-height: 43px;
+  margin-left: 22px;
+  color: white;
+  border: 0.5px solid white;
+  background-color: black;
+  margin: 8px;
+  border-radius: 15px;
+  font-family: "Varela Round", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
-.songs:hover{
-    cursor: url("icons8-hand-cursor\ \(2\).svg"), pointer;
-    background-color: white;
-    color: purple;
-    border: 1px solid black;
+.songs:active {
+  transform: translate(0px, 1px);
+  -webkit-transform: translate(0px, 1px);
 }
 
-span img{
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    border: 1.5px solid black;
-    margin-top: 9px;
+.animate {
+  transition: all 1s ease;
+  transform: scale(1);
 }
 
-.duration{
-    border: 1px solid white;
-    background-color: purple;
-    color: white;
-    height: 45px;
-    width: 60px;
-    border-radius: 15px;
-    margin-top: 8px;
-    line-height: 2.9;
-    font-family: "Varela Round", sans-serif;
-    font-weight: 900;
-    text-align: center;
+.animate:hover {
+  cursor: url("icons8-hand-cursor\ \(2\).svg"), pointer;
+  background-color: white;
+  color: purple;
+  transform: scale(1.1) perspective(1px);
 }
 
-
-.temp{
-    display: flex;
+span img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: 1.5px solid black;
+  margin-top: 9px;
 }
 
-.footer{
-    display: flex;
-    align-items: center;
-    height: 75px;
-    flex-direction: column;
-    background-color: rgb(219, 185, 185);
-    margin-top: 13px;
+.duration {
+  border: 1px solid white;
+  background-color: purple;
+  color: white;
+  height: 45px;
+  width: 60px;
+  border-radius: 15px;
+  margin-top: 8px;
+  line-height: 2.9;
+  font-family: "Varela Round", sans-serif;
+  font-weight: 500;
+  text-align: center;
 }
 
-input[type=range]{
-    width: 80%;
-    height: 7px;
-    margin-top: 10px;
-    accent-color: #83580b;
+.temp {
+  display: flex;
 }
 
-input:hover{
-    cursor: url("icons8-hand-cursor\ \(2\).svg"), pointer;
+.footer {
+  display: flex;
+  align-items: center;
+  height: 75px;
+  flex-direction: column;
+  background-color: rgb(219, 185, 185);
+  margin-top: 13px;
 }
 
-.footer-main{
-    display: flex;
-    height: 40px;
-    width: 100%;
-    margin-top: 10px;
-    align-items: center; 
-    justify-content: center; 
-    position: relative;
+input[type="range"] {
+  width: 80%;
+  height: 7px;
+  margin-top: 10px;
+  accent-color: #83580b;
 }
 
-.current-song{
-    height: 40px;
-    width: 290px;
-    text-align: center;
-    line-height: 40px;
-    margin-left: -309px;
-    color: white;
-    border: 1.5px solid white;
-    background-color: black;
-    border-radius: 15px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    cursor: url("hand-pointer-regular\ \(1\).svg"), pointer;
-
+input:hover {
+  cursor: url("icons8-hand-cursor\ \(2\).svg"), pointer;
 }
 
-.icons i{
-    cursor: url("hand-pointer-regular\ \(1\).svg"), pointer;
+.footer-main {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.music-dur{
-    border: 1px solid black;
-    position: absolute;
-    right: 140px;
-    background-color: purple;
-    border-radius: 6px;
-    color: white;
-    padding: 5px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: 600;
-    visibility: hidden;
+.current-song {
+  height: 40px;
+  width: 290px;
+  text-align: center;
+  line-height: 40px;
+  margin-left: -309px;
+  color: white;
+  border: 1.5px solid white;
+  background-color: black;
+  border-radius: 15px;
+  font-family: "Varela Round", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  cursor: url("hand-pointer-regular\ \(1\).svg"), pointer;
 }
 
-.start{
-    left: 140px;
-    border: 1px solid black;
-    position: absolute;
-    background-color: purple;
-    border-radius: 6px;
-    color: white;
-    padding: 5px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: 600;
-    visibility: hidden;
+.icons i {
+  cursor: url("hand-pointer-regular\ \(1\).svg"), pointer;
 }
 
-.start:active{
-    transform: translate(0px, 5px);
-    -webkit-transform: translate(0px, 5px);
+.music-dur {
+  position: absolute;
+  right: 140px;
+  background-color: purple;
+  border-radius: 6px;
+  color: white;
+  padding: 5px;
+  font-family: "Varela Round", sans-serif;
+  font-weight: 500;
+  visibility: hidden;
 }
 
-.start:hover{
-    transform: scale(1.2) perspective(10px);
+.start {
+  left: 140px;
+  position: absolute;
+  background-color: purple;
+  border-radius: 6px;
+  color: white;
+  padding: 5px;
+  font-family: "Varela Round", sans-serif;
+  font-weight: 500;
+  visibility: hidden;
+}
+
+.start:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
 }
