@@ -43,8 +43,6 @@ seek.addEventListener("change", function () {
     case 5: step_during_jump = 30; break;
     case 6: step_during_jump = 36; break;
   }
-  console.log(songs_current_time);
-  console.log(step_during_jump);
   isDuration_jumped = true;
 });
 
@@ -63,7 +61,6 @@ function range_slider(music) {
       step = step_during_jump;
       entereed_into = true;
     }
-    console.log(step);
     startTimer.innerHTML =
       `0${(curr_time_ofSong / 60) | 0}:${min - step}` +
       `${curr_time_ofSong % 10}`;
@@ -87,7 +84,7 @@ function range_slider(music) {
 }
 
 let backward_play_btn = document.querySelector(".play-backward");
-let forward_play_btn = document.querySelector(".play-backward");
+let forward_play_btn = document.querySelector(".play-forward");
 
 let arrayOf_songDivs = document.querySelectorAll(".songs");
 
@@ -107,6 +104,7 @@ backward_play_btn.addEventListener("click", function () {
     selected_user_song = arrayOfsongs[arrayOfsongs.length - 1];
     play_pause_element.classList.remove("fa-circle-pause");
     play_pause_element.classList.add("fa-circle-play");
+    endTimer.innerHTML = durationOfsongs[song_index];
   } else {
     let ele = document.querySelector(".current-song");
     ele.innerHTML = arrayOf_songDivs[song_index - 1].innerHTML;
@@ -119,6 +117,40 @@ backward_play_btn.addEventListener("click", function () {
     play_pause_element.classList.remove("fa-circle-pause");
     play_pause_element.classList.add("fa-circle-play");
     song_index = song_index - 1;
+    endTimer.innerHTML = durationOfsongs[song_index];
+  }
+});
+
+forward_play_btn.addEventListener("click", function(){
+  step = 0;
+  val = true;
+  isDuration_jumped = false;
+  if (song_index == 5) {
+    let ele = document.querySelector(".current-song");
+    ele.innerHTML = "One call away - By charlie puth";
+    curr_audio.pause();
+    curr_audio.currentTime = 0;
+    is_playing_song = false;
+    seeker.value = 0;
+    song_index = 0;
+    curr_audio = arrayOfsongs[0];
+    selected_user_song = arrayOfsongs[0];
+    play_pause_element.classList.remove("fa-circle-pause");
+    play_pause_element.classList.add("fa-circle-play");
+    endTimerl.innerHTML = durationOfsongs[song_index];
+  } else {
+    let ele = document.querySelector(".current-song");
+    ele.innerHTML = arrayOf_songDivs[song_index + 1].innerHTML;
+    curr_audio.pause();
+    curr_audio.currentTime = 0;
+    is_playing_song = false;
+    seeker.value = 0;
+    curr_audio = arrayOfsongs[song_index + 1];
+    selected_user_song = arrayOfsongs[song_index + 1];
+    play_pause_element.classList.remove("fa-circle-pause");
+    play_pause_element.classList.add("fa-circle-play");
+    song_index = song_index + 1;
+    endTimer.innerHTML = durationOfsongs[song_index];
   }
 });
 
